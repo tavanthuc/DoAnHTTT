@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-8">
         <a href="${pageContext.request.contextPath}/admin/student/add" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Thêm</a>
-
+		<a href="${pageContext.request.contextPath}/admin/student/add" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Thêm bằng excel</a>
     </div>
     <div class="col-md-4">
         <div class="input-group form">

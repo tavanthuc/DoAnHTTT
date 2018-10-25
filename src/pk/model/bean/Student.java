@@ -9,49 +9,55 @@ public class Student {
 	private int PHONE;
 	private String SBD;
 	private String REGISTERFACULTY;
-	private int SUMCORE;
+	private int SUMSCORE;
 	private String NATIONALLITY;
 	private String NATION;
 	private String ADDRESS;
 	private Date BIRTHDAY; 
 	private int SEX;
+	private String EMAIL;
 	
-	
+	public String getEMAIL() {
+		return EMAIL;
+	}
+	public void setEMAIL(String EMAIL) {
+		this.EMAIL = EMAIL;
+	}
 	public int getPHONE() {
 		return PHONE;
 	}
-	public void setPHONE(int pHONE) {
-		PHONE = pHONE;
+	public void setPHONE(int PHONE) {
+		this.PHONE = PHONE;
 	}
 	public String getSBD() {
 		return SBD;
 	}
-	public void setSBD(String sBD) {
-		SBD = sBD;
+	public void setSBD(String SBD) {
+		this.SBD = SBD;
 	}
 	public String getREGISTERFACULTY() {
 		return REGISTERFACULTY;
 	}
-	public void setREGISTERFACULTY(String rEGISTERFACULTY) {
-		REGISTERFACULTY = rEGISTERFACULTY;
+	public void setREGISTERFACULTY(String REGISTERFACULTY) {
+		this.REGISTERFACULTY = REGISTERFACULTY;
 	}
-	public int getSUMCORE() {
-		return SUMCORE;
+	public int getSUMSCORE() {
+		return SUMSCORE;
 	}
-	public void setSUMCORE(int sUMCORE) {
-		SUMCORE = sUMCORE;
+	public void setSUMSCORE(int SUMSCORE) {
+		this.SUMSCORE = SUMSCORE;
 	}
 	public String getNATIONALLITY() {
 		return NATIONALLITY;
 	}
-	public void setNATIONALLITY(String nATIONALLITY) {
-		NATIONALLITY = nATIONALLITY;
+	public void setNATIONALLITY(String NATIONALLITY) {
+		this.NATIONALLITY = NATIONALLITY;
 	}
 	public String getNATION() {
 		return NATION;
 	}
-	public void setNATION(String nATION) {
-		NATION = nATION;
+	public void setNATION(String NATION) {
+		this.NATION = NATION;
 	}
 	public String getNAME() {
 		return NAME;
@@ -105,6 +111,5 @@ public class Student {
 		this.BIRTHDAY = BIRTHDAY;
 		this.SEX = SEX;
 	}
-	
 	
 }
