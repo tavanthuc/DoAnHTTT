@@ -105,7 +105,6 @@ public class Student {
 		this.BIRTHDAY = BIRTHDAY;
 		this.SEX = SEX;
 	}
-	kdsaidias
 	
 	
 }
