@@ -32,7 +32,7 @@
 		<fmt:formatDate value="${listLands.date_create}" var="day" pattern="dd"/>
 		<fmt:formatDate value="${listLands.date_create}" var="month" pattern="MM"/>
 		
-<c:set var="urlDetail" value="${pageContext.request.contextPath }/detail/${SlugUtil.makeSlug(listLands.lname)}-${listLands.lid}.html"></c:set>
+<c:set var="urlDetail" value="${pageContext.request.contextPath }/public/single/${SlugUtil.makeSlug(listLands.lname)}-${listLands.lid}.html"></c:set>
 			<div class="clearfix single_content">
 				<div class="clearfix post_date floatleft">
 					<div class="date">
@@ -72,7 +72,7 @@
 		<ul>
 			<li><a href=""> << </a></li>
 			<c:forEach var="i" begin="1" end="${tongsopage}">
-			<li><a href="${pageContext.request.contextPath}/index/${i}">${i}</a></li>
+			<li><a href="${pageContext.request.contextPath}/public/index/${i}">${i}</a></li>
 			</c:forEach>
 			<li><a href=""> >> </a></li>
 		</ul>

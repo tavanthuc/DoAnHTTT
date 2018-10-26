@@ -19,7 +19,7 @@
             <div class="header_bottom">
                 <nav>
                     <ul id="nav">
-                        <li><a href="index.php">Trang chủ</a></li>
+                        <li><a href="${pageContext.request.contextPath}/public/index">Trang chủ</a></li>
                         <li id="dropdown"><a href="cat.php">Bất động sản</a>
                             <ul>
                             <c:forEach items="${listcat}" var="objcat">
@@ -27,7 +27,7 @@
                                </c:forEach>    
                             </ul>
                         </li>
-                        <li><a href="single.php">Giới thiệu</a></li>
+                        <li><a href="${pageContext.request.contextPath}/public/single">Giới thiệu</a></li>
                         <li><a href="${pageContext.request.contextPath}/public/contact">Liên hệ</a></li>
                     </ul>
                 </nav>

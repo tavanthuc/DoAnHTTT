@@ -21,10 +21,10 @@ public class StudentDAO {
 	private JdbcTemplate jdbcTemplate;
 	private String FIND_ALL1="SELECT l.*,cname FROM lands AS l  INNER JOIN categories AS c ON l.cid=c.cid ORDER BY lid DESC LIMIT ?,?";
 	private String FIND_ALL="SELECT * FROM hocsinhtrungtuyen  ORDER BY id DESC ";
-	private String FIND_BY_ID="SELECT * FROM lands WHERE lid=?";
+	private String FIND_BY_ID="SELECT * FROM hocsinhtrungtuyen WHERE id=?";
 	private String INSERT="INSERT INTO hocsinhtrungtuyen(NAME,CMND,BIRTHDAY,SEX,ADDRESS) VALUE(?,?,?,?,?)";
 	private String UPDATE ="UPDATE lands SET lname=?,cid=?,picture=?,area=?,address=?,description=? WHERE lid=? ";
-	private String DELETE="DELETE FROM lands WHERE lid=?";
+	private String DELETE="DELETE FROM hocsinhtrungtuyen WHERE id=?";
 	
 	public List<Student> getitems() {
 		return jdbcTemplate.query(FIND_ALL, new BeanPropertyRowMapper<>(Student.class));
@@ -39,12 +39,12 @@ public class StudentDAO {
 		//String date = simpleDateFormat.format(new Date());
 		return jdbcTemplate.update(INSERT,new  Object[] {student.getNAME(),student.getCMND(),simpleDateFormat.format(student.getBIRTHDAY()),student.getSEX(),student.getADDRESS()});
 	}
-	public int delitem(int cid) {
+	public int delitem(int id) {
 		
-		return jdbcTemplate.update(DELETE, new Object[] {cid});
+		return jdbcTemplate.update(DELETE, new Object[] {id});
 	}
-	public Land getItem(int lid) {
-		return jdbcTemplate.queryForObject(FIND_BY_ID, new Object[] {lid},new BeanPropertyRowMapper<>(Land.class));
+	public Student getItem(int id) {
+		return jdbcTemplate.queryForObject(FIND_BY_ID, new Object[] {id},new BeanPropertyRowMapper<>(Student.class));
 	}
 	public int Update(Land land,int lid) {
 		return jdbcTemplate.update(UPDATE, new Object[] {land.getLname(),land.getCid(),land.getPicture(),land.getArea(),land.getAddress(),land.getDescription(),lid});

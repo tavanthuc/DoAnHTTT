@@ -48,8 +48,6 @@ public class AdminStudentController {
 	}
 	@PostMapping("add")
 	public String add(@ModelAttribute("objstudent") Student objstudent,RedirectAttributes ra) {
-		System.out.println(objstudent.getNAME());
-		System.out.println(objstudent.getADDRESS());
 		if(studentdao.additem(objstudent)>0) {
 			ra.addFlashAttribute("msg",Defines.MSG_UPDATE_SUCCESS);
 		}else {
@@ -59,7 +57,34 @@ public class AdminStudentController {
 		return "redirect:/admin/student/index?msg=0";
 		
 	}
-	
+	@GetMapping("edit/{id}")
+	public String add(@PathVariable(name="id")  Integer id,ModelMap modelMap) {
+		Student stitem=studentdao.getItem(id);
+		modelMap.addAttribute("stitem", stitem);
+		return "cland.admin.student.edit";
+	}
+	@PostMapping("edit")
+	public String edit(@ModelAttribute("objstudent") Student objstudent,RedirectAttributes ra) {
+		
+		if(studentdao.additem(objstudent)>0) {
+			ra.addFlashAttribute("msg",Defines.MSG_UPDATE_SUCCESS);
+		}else {
+			ra.addFlashAttribute("msg",Defines.MSG_ERROR);
+		}
+		
+		return "redirect:/admin/student/index?msg=0";
+		
+	}
+	@GetMapping("del/{id}")
+	public String del(@PathVariable(name = "lid") int id, RedirectAttributes ra) {
+		if (studentdao.delitem(id) > 0) {
+			ra.addFlashAttribute("msg", Defines.MSG_DELETE_SUCCESS);
+
+		} else {
+			ra.addFlashAttribute("msg", Defines.MSG_ERROR);
+		}
+		return "redirect:/admin/student/index";
+	}
 	
 	
 }

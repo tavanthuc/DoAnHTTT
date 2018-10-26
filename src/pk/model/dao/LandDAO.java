@@ -18,6 +18,7 @@ public class LandDAO {
 	private JdbcTemplate jdbcTemplate;
 	private String FIND_ALL1="SELECT l.*,cname FROM lands AS l  INNER JOIN categories AS c ON l.cid=c.cid ORDER BY lid DESC LIMIT ?,?";
 	private String FIND_ALL="SELECT l.*,cname FROM lands AS l  INNER JOIN categories AS c ON l.cid=c.cid ORDER BY lid DESC ";
+	private String FIND_byid="SELECT l.*,cname FROM lands AS l  INNER JOIN categories AS c ON l.cid=c.cid  WHERE c.cid=? ORDER BY l.lid DESC ";
 	private String FIND_BY_ID="SELECT * FROM lands WHERE lid=?";
 	private String INSERT="INSERT INTO lands(lname,cid,picture,area,address,description) VALUE(?,?,?,?,?,?)";
 	private String UPDATE ="UPDATE lands SET lname=?,cid=?,picture=?,area=?,address=?,description=? WHERE lid=? ";
@@ -44,5 +45,9 @@ public class LandDAO {
 	}
 	public int totalItems() {
 		return jdbcTemplate.queryForObject("SELECT COUNT(*) AS dem from lands", Integer.class);
+	}
+	public List<Land> getitems(Integer id) {
+		
+		return jdbcTemplate.query(FIND_byid,new Object[] {id}, new BeanPropertyRowMapper<>(Land.class));
 	}
 }

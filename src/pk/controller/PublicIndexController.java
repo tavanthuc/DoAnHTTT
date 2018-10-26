@@ -23,7 +23,7 @@ import pk.model.dao.ContactDao;
 import pk.model.dao.LandDAO;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("public")
 public class PublicIndexController {
 	@Autowired
 	private LandDAO landdao;
@@ -34,6 +34,8 @@ public class PublicIndexController {
 	@ModelAttribute
 	public void commonObjects(ModelMap modelMap) {
 		List<Category> listcat = catdao.getitems();
+		List<Land> listland=landdao.getitems1(0);
+		modelMap.addAttribute("listland", listland);
 		modelMap.addAttribute("listcat", listcat);
 		
 	}
@@ -55,14 +57,28 @@ public class PublicIndexController {
 		return "cland.public.index.index";
 	}
 	
-	@GetMapping("cat")
-	public String cat() {
+	@GetMapping({"cat","cat/{id}"})
+	public String cat(@PathVariable(name="id", required = false) Integer id,ModelMap modelMap) {
+		if(id==null) {
+			return "cland.public.index.index";
+		}
+		Category catitem=catdao.getItem(id);
+		System.out.println("dtd");
+		List<Land> listlandid=landdao.getitems(id);
+		System.out.println("dtd2");
+		modelMap.addAttribute("catitem", catitem);
+		modelMap.addAttribute("listlandid", listlandid);
 		return "cland.public.index.cat";
 	}
 	
-	@GetMapping("/detail/{name}-{id}.html")
-	public String single(@PathVariable("name") String name,@PathVariable("id") int id) {
-		System.out.println(name+id);
+	
+	@GetMapping("/single/{name}-{id}.html")
+	public String single(@PathVariable("name") String name,@PathVariable("id") int id,ModelMap modelMap) {
+		Land landitem= landdao.getItem(id);
+		Land item= landdao.getItem(id);
+		List<Land> listrela= landdao.getitems(item.getCid());
+		modelMap.addAttribute("listrela", listrela);
+		modelMap.addAttribute("landitem", landitem);
 		return "cland.public.index.single";
 	}
 	

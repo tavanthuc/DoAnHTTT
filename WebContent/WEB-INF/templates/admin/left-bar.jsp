@@ -12,7 +12,7 @@
 			class="glyphicon glyphicon-book"></i>Quản Lý Thông Báo</a></li>
 	<li><a href="${pageContext.request.contextPath}/admin/user/index"><i
 			class="glyphicon glyphicon-plus"></i>Quản Lý Người dùng</a></li>
-	<li><a href="${pageContext.request.contextPath}/admin/user/index"><i
+	<li><a href="${pageContext.request.contextPath}/admin/student/index"><i
 			class="glyphicon glyphicon-plus"></i>Quản Lý Sinh Viên</a></li>
 	<li><a
 		href="${pageContext.request.contextPath}/admin/contact/index"><i

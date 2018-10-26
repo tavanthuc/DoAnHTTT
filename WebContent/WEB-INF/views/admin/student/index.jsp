@@ -55,7 +55,7 @@
                     <td class="center">${objstudent.BIRTHDAY}</td>
                     <td class="center text-center"><c:if test="${objstudent.SEX eq 1}">nam</c:if><c:if test="${objstudent.SEX ne 1}">nữ</c:if></td>
                     <td class="center text-center">
-                        <a href="${pageContext.request.contextPath}/admin/student/edit/${objstudent.ID}" title="" class="btn btn-primary"><span class="glyphicon glyphicon-pencil "></span> Sửa</a>
+                        <a href="${pageContext.request.contextPath}/admin/student/edit/${objstudent.ID}" title="" class="btn btn-primary"><span class="glyphicon glyphicon-pencil "></span>Xem chi tiết</a>
                         <a href="${pageContext.request.contextPath}/admin/student/del/${objstudent.ID}" title="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
                     </td>
                 </tr>

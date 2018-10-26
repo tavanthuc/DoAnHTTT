@@ -10,6 +10,8 @@ public class Student {
 	private String ADDRESS;
 	private Date BIRTHDAY; 
 	private int SEX;
+	
+	
 	public String getNAME() {
 		return NAME;
 	}

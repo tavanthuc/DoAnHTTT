@@ -19,8 +19,8 @@
                 <h2>Xem nhiều</h2>
             </div>
             <ul>
-             <c:if test="${not empty listLand }">
-        <c:forEach items="${listLand}" var="objland">
+             <c:if test="${not empty listland }">
+        <c:forEach items="${listland}" var="objland">
            
                 <li><a href="${pageContext.request.contextPath}/public/single/${objland.lid}">${objland.lname} </a></li>
               
