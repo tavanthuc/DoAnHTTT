@@ -6,12 +6,53 @@ public class Student {
 	private String NAME;
 	private int CMND;
 	private int ID;
-	
+	private int PHONE;
+	private String SBD;
+	private String REGISTERFACULTY;
+	private int SUMCORE;
+	private String NATIONALLITY;
+	private String NATION;
 	private String ADDRESS;
 	private Date BIRTHDAY; 
 	private int SEX;
 	
 	
+	public int getPHONE() {
+		return PHONE;
+	}
+	public void setPHONE(int pHONE) {
+		PHONE = pHONE;
+	}
+	public String getSBD() {
+		return SBD;
+	}
+	public void setSBD(String sBD) {
+		SBD = sBD;
+	}
+	public String getREGISTERFACULTY() {
+		return REGISTERFACULTY;
+	}
+	public void setREGISTERFACULTY(String rEGISTERFACULTY) {
+		REGISTERFACULTY = rEGISTERFACULTY;
+	}
+	public int getSUMCORE() {
+		return SUMCORE;
+	}
+	public void setSUMCORE(int sUMCORE) {
+		SUMCORE = sUMCORE;
+	}
+	public String getNATIONALLITY() {
+		return NATIONALLITY;
+	}
+	public void setNATIONALLITY(String nATIONALLITY) {
+		NATIONALLITY = nATIONALLITY;
+	}
+	public String getNATION() {
+		return NATION;
+	}
+	public void setNATION(String nATION) {
+		NATION = nATION;
+	}
 	public String getNAME() {
 		return NAME;
 	}
@@ -53,6 +94,7 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
 	public Student(String NAME, int CMND, int ID,  String ADDRESS, Date BIRTHDAY, int SEX) {
 		super();
 		this.NAME = NAME;
@@ -63,7 +105,7 @@ public class Student {
 		this.BIRTHDAY = BIRTHDAY;
 		this.SEX = SEX;
 	}
-	
+	kdsaidias
 	
 	
 }
